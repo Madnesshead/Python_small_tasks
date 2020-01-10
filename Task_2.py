@@ -25,3 +25,10 @@ print('\nQuestion_2')
 sorted_result_count = sorted(result.items(), key=itemgetter(1))
 for item in sorted_result_count:
     print(repr(f'{item[0]} - {item[1]}'))
+
+
+#2. Solution with lambda function
+print('\nQuestion_2_with_lambda')
+sorted_result_count = sorted(result.items(), key=lambda x: x[1])
+for item in sorted_result_count:
+    print(repr(f'{item[0]} - {item[1]}'))

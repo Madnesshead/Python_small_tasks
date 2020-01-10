@@ -39,8 +39,8 @@ print("Task 2 answer, variant 2: " + str(len(vowels)))
 
 # 2-3
 vowels_count = 0
-for letter in text.lower():
-    if letter in 'aeiou':
+for letter in text:
+    if letter.lower() in 'aeiou':
         vowels_count += 1
 print("Task 2 answer, variant 3: " + str(len(vowels)))
 
@@ -50,9 +50,9 @@ every_18th = text[17::18]
 print("Every 18th symbol in real case: " + str(every_18th))
 print("Every 18th symbol in reverse case: " + str(every_18th.swapcase()))
 print("Task 3 answer: ")
-for idx, item in enumerate(text):
-    if (idx + 1) % 18 == 0:
-        print('{}{}'.format(idx + 1, item.swapcase()))
+for idx, item in enumerate(text, 1):
+    if idx % 18 == 0:
+        print('{}{}'.format(idx, item.swapcase()))
 
 
 

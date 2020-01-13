@@ -4,23 +4,24 @@ class Store:
 
 
 class GroceryStore(Store):
-    def __init__(self, price):
-        super().__init__(price)
+    def __init__(self, name):
+        super().__init__(name)
 
 
 class HardwareStore(Store):
-    def __init__(self, price):
-        super().__init__(price)
+    def __init__(self, name):
+        super().__init__(name)
 
 
 class Good:
-    def __init__(self, price, discount_percentage):
+    def __init__(self, price):
         self.price = price
-        self.discount_percentage = discount_percentage
+        self.discount_percentage = 0
+        self.discount_price = price
 
-    def set_discount(self, price, discount_percentage):
-        discount_price = price * 0.01 * discount_percentage
-        return discount_price
+    def set_discount(self, percentage):
+        self.discount_percentage = percentage
+        self.discount_price = self.price * 0.01 * percentage
 
 
 class Food(Good):
